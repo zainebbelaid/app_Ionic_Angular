@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+   
+    <ion-buttons slot="start"> <ion-back-button defaultHref='/contact-list'></ion-back-button>    
+    <ion-title><h1>Ajouter un contact</h1></ion-title>
+  </ion-buttons> 
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+    <form>
+      <ion-list>
+
+  <ion-button style=" padding-left: 56%" color="secondary"(click)="addcontact()">Enregistrer</ion-button>                    
+  <br>
+  <ion-item> 
+    <ion-avatar slot="start">
+      <img src="https://oasys.ch/wp-content/uploads/2019/03/photo-avatar-profil.png">
+    </ion-avatar>
+    <ion-label style="color:rgb(2, 2, 2);font-weight: 550;" >Ajouter</ion-label>
+  </ion-item>
+  
+  
+  <ion-item>
+     <ion-input style="font-size: 18px; color:rgb(22, 2, 114); font-weight: 550;"[(ngModel)]="nom" placeholder="Nom" required="required" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input style="font-size: 18px; color: #847d7d; font-weight: 550;"[(ngModel)]="statut" placeholder="statut" required="required" ></ion-input>
+ </ion-item>
+  
+  <ion-item></ion-item>
+  
+  <ion-item>
+    <ion-input type="number" style="font-size: 18px; color: rgb(45, 148, 151) ; font-weight: 550;"[(ngModel)]="fixe" placeholder="Tél. Fixe" required="required"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="number" style="font-size: 18px; color: rgb(45, 148, 151); font-weight: 550;" [(ngModel)]="portable" placeholder="Tél. Portable" required="required"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" style="font-size: 18px; color: rgb(45, 148, 151); font-weight: 550;"[(ngModel)]="adresse" placeholder="adresse" required="required"></ion-input>
+  </ion-item>
+</ion-list>
+  
+</form>
+</ion-card-content>
+</ion-card>
+
+  
+      
+
+
+
+
+
+
+</ion-content>
+

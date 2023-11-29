@@ -1,0 +1,26 @@
+swiper-container{
+    
+    height: 100%;
+}
+ion-icon {
+  font-size: 64px;
+  color: #ffff;
+}
+swiper-slide{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+swiper-slide p{
+    font-size:27px;
+    color:#ffff;
+    text-align: center;
+    
+}
+ion-button.ion-color.ion-color-danger.md.button.button-solid.ion-activatable.ion-focusable.hydrated {
+    font-size: 20px;
+}

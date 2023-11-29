@@ -1,0 +1,209 @@
+<ion-header >
+  <ion-toolbar color="secondary">
+    <ion-title >Création du Compte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form>
+    <ion-list>
+
+<br>
+<ion-item> 
+  <ion-avatar slot="start">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRku-od42ZteMyr_3cjSqJwhjGCSF2X9CjOWQ&usqp=CAU">
+  </ion-avatar>
+  <ion-label style="color:#5fa8e4" >Ajouter</ion-label>
+</ion-item>
+
+<ion-item>
+   <ion-input type="text" style="font-size: 18px; color: #847d7d; font-weight: 550;" [(ngModel)]="nom" placeholder="*Nom" required="required" ></ion-input>
+</ion-item>
+
+<ion-item>
+   <ion-input type="text" style="font-size: 18px; color: #847d7d; font-weight: 550;" [(ngModel)]="prenom" placeholder="*Prénom" required="required" ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Date de Naissance</ion-label>
+  <ion-datetime-button  datetime="datetime"  name="duedate" ></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime id="datetime" required [(ngModel)]="datenaiss" presentation="date" [preferWheel]="true"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        
+</ion-item>
+
+
+
+<ion-item>
+  <ion-input type="email" style="font-size: 18px; color: #847d7d; font-weight: 550;" [(ngModel)]="email" placeholder="*Email" required="required"></ion-input>
+</ion-item>
+
+
+<ion-item>
+  <ion-input type="password" style="font-size: 18px; color: #847d7d; font-weight: 550;" [(ngModel)]="password" placeholder="*Mot de Passe" required="required" ></ion-input>
+</ion-item>
+
+
+
+
+
+
+<br><br>
+<div style="color: #e7bd3d; font-size: 133%; font-family: fangsong; text-align: center;">
+<ion-icon name="document-text-sharp"></ion-icon>
+<a style="color: #e7bd3d "id="open-modal" expand="block" color="warning" >Remplir le dossier santé</a>
+</div>
+
+<ion-modal trigger="open-modal" >
+
+  <ng-template>
+    <ion-header>
+
+      <ion-toolbar color="light">
+        <ion-buttons slot="start">
+          <ion-button color="danger" (click)="cancel()" [strong]="true"><ion-icon name="close"></ion-icon></ion-button>
+        </ion-buttons>
+        
+      </ion-toolbar>
+
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      
+            
+      <ion-content [fullscreen]="true" >
+        <br>
+        <ion-item>
+          <ion-input type="number" style="font-size: 17px; color: #847d7d; font-weight: 550;" [(ngModel)]="taille" placeholder="*Taille (cm)" required="required"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="number" style="font-size: 17px; color:  #847d7d; font-weight: 550;" [(ngModel)]="poids" placeholder="*Poids (kg)" required="required"></ion-input>
+        </ion-item>
+
+      <ion-item> 
+        <ion-label style="font-size: 17px;font-weight:550;color:#585353">
+        <span style="color: #5fa8e4;" >Assurance santé de base </span><br>Mon attestation d'assurance maladie
+        </ion-label>  
+        
+          <ion-icon  style="color:#5fa8e4 ;font-size: 133%;  text-align: center;" name="download-sharp"></ion-icon>        
+      
+      </ion-item>
+
+        <ion-item >
+          <ion-label color="primary" style="font-size: 17px;font-weight: bold;">
+            ALLERGIES
+          </ion-label>
+        </ion-item>
+      
+      <ion-item>
+        <ion-label color="black" style="font-size: 17px; font-weight: 600;">Médicaments</ion-label>
+        <ion-input style="font-size: 18px; color: #000000;font-weight: 500;"[(ngModel)]="all_medic" placeholder="Allergie à"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-toggle color="black" style="font-size: 17px; font-weight: 600;"> Asthme </ion-toggle>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label color="black" style="font-size: 17px;  font-weight: 550;">Peau,Eczema...</ion-label>
+        <ion-input style="font-size: 18px; color: #000000;font-weight: 500;"[(ngModel)]="all_peau" placeholder="Allergie à"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label color="black" style="font-size: 17px;  font-weight: 550;">Aliments</ion-label>
+        <ion-input style="font-size: 18px; color: #000000;font-weight: 500;"[(ngModel)]="all_aliments" placeholder="Allergie à"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label color="black" style="font-size: 17px;  font-weight: 550;">Insectes</ion-label>
+        <ion-input style="font-size: 18px; color: #000000;font-weight: 500;" [(ngModel)]="all_insectes" placeholder="Allergie à"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label  color="black" style="font-size: 17px; font-weight: 550;">Autres</ion-label>
+        <ion-input  style="font-size: 18px; color: #000000;font-weight: 500;" [(ngModel)]="all_autres" placeholder="Allergie à"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label color="primary" style="font-size: 17px;font-weight: bold;">
+         DERNIERS BILANS MEDICAUX
+        </ion-label>
+        <ion-icon  style="color:#5fa8e4 ;font-size: 133%;  text-align: center;" name="download-sharp"></ion-icon>        
+      </ion-item>
+      
+      <ion-item >
+        <ion-label color="primary" style="font-size: 17px;font-weight: bold;">
+         CARTE DE GROUPE SANGUIN
+        </ion-label>
+        <ion-icon  style="color:#5fa8e4 ;font-size: 133%;  text-align: center;" name="download-sharp"></ion-icon>        
+      </ion-item>
+
+      <ion-item >  
+        <ion-label color="primary" style="font-size: 17px;font-weight: bold;">
+         VACCINATION
+        </ion-label>
+        <ion-icon  style="color:#5fa8e4 ;font-size: 133%;  text-align: center;" name="download-sharp"></ion-icon>        
+      </ion-item>
+      
+      <ion-item >
+        <ion-label color="primary" style="font-size: 17px;font-weight: bold;">
+         DERNIERES ORDONNANCES/TRAITEMENTS
+        </ion-label>
+        <ion-icon  style="color:#5fa8e4 ;font-size: 133%;  text-align: center;" name="download-sharp"></ion-icon>        
+      </ion-item>
+      
+      <ion-item >
+        <ion-label color="primary" style="font-size: 17px;font-weight: bold;">
+         REGIME
+        </ion-label>
+        <ion-icon  style="color:#5fa8e4 ;font-size: 133%;  text-align: center;" name="download-sharp"></ion-icon>        
+      </ion-item>
+      
+      <ion-item >
+        <ion-toggle color="primary" style="font-size: 17px;font-weight: bold;"> Port d'une pile cardiaque </ion-toggle>
+       
+      </ion-item>
+
+      
+      <ion-item >
+        <ion-label color="primary" style="font-size: 17px;font-weight: bold;">
+         Soins Psychologiques
+        </ion-label>
+        <ion-icon  style="color:#5fa8e4 ;font-size: 133%;  text-align: center;" name="download-sharp"></ion-icon>        
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-label color="primary" style="font-size: 17px;font-weight: bold;">
+          Don d'Organe
+        </ion-label>
+        <ion-icon  style="color:#5fa8e4 ;font-size: 133%;  text-align: center;" name="download-sharp"></ion-icon>        
+      </ion-item>
+      
+      <br> 
+            
+      <ion-button  style="padding-left: 92px;margin: 12px;;font-family: initial;" color="medium" (click)="addformu()" >Valider</ion-button>
+
+      </ion-content>
+      
+      
+
+
+    </ion-content>
+  </ng-template>
+
+</ion-modal>
+
+<br>
+
+
+</ion-list>
+  
+</form>
+
+
+
+</ion-content>

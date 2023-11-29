@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  
+    <ion-toolbar>
+      <ion-title color="secondary">Contact</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content [fullscreen]="true"  class="ion-padding">
+  <div class="container">
+<ion-searchbar></ion-searchbar>
+<br>
+<ion-card *ngFor="let contact of contacts" >
+  <ion-item-sliding>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+     <ion-label>
+      <h2>{{contact.nom}}</h2> 
+     <p>{{contact.statut}}</p>
+    </ion-label>
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option color="danger" (click)="delete(contact.contactId)">
+      DELETE
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>
+    </ion-card>
+
+  </div>
+    <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+      <ion-fab-button defaultHref='/contact-add' color="secondary">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      </ion-fab>
+</ion-content>

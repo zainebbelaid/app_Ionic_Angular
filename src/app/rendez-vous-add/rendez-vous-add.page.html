@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+       <ion-back-button defaultHref="/rendez-vous">
+
+       </ion-back-button>
+    </ion-button>
+    <ion-title>Ajouterun Rendez-vous </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+
+  <ion-card>
+    <ion-card-content >
+    <form>
+      
+      <ion-list>
+
+        <ion-item>
+          <ion-label position="floating">Date de rendez-vous</ion-label>
+          <br>
+          <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime id="datetime"[(ngModel)]="dh_rendezvous"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Nom de medcin </ion-label>
+          <ion-input required type="text" [(ngModel)]="nom_medcin" ></ion-input>
+        </ion-item>       
+
+        <ion-item>
+          <ion-label position="floating">Centre Medicale</ion-label>
+          <ion-textarea required type="text" [(ngModel)]="centre_medicale" name="desc" rows="4" cols="20" ></ion-textarea>       
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">le motif du rendez-vous</ion-label>
+          <ion-textarea required type="text" [(ngModel)]="motif_rendezvous" name="desc" rows="4" cols="20" ></ion-textarea>       
+        </ion-item>
+        
+
+       
+        
+<br><br>
+        <ion-button expand ="block" shape="round" (click)="addrendezvous()">Enregistrer</ion-button>
+
+      </ion-list>
+
+    </form>
+  </ion-card-content>
+  </ion-card>
+</ion-content>
